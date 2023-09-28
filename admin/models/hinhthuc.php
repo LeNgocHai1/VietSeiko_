@@ -1,4 +1,5 @@
 <?php
+require_once "db.php";
 class Hinhthuc extends Db
 {
     /**
@@ -28,7 +29,7 @@ class Hinhthuc extends Db
     /**
      * Lấy name_hinhthuc của job hinhthuc theo id_hinhthuc
      */
-    static function getHinhthucNam($id_hinhthuc)
+    static function getHinhthucName($id_hinhthuc)
     {
         $sql = self::$connection->prepare("SELECT * FROM job_hinhthuc WHERE id_hinhthuc = ?");
         $sql->bind_param("i", $id_hinhthuc);
@@ -48,14 +49,17 @@ class Hinhthuc extends Db
     }
 
     /**
-     * Thêm Job hinhthuc
+     * Thêm Job nganhnghe
      */
-    static function insertJobHinhthuc($name_hinhthuc)
+    function addHinhthuc($name, $img)
     {
-        $sql = self::$connection->prepare("INSERT INTO job_hinhthuc(id_hinhthuc, name_hinhthuc) VALUE (0, 'name_hinhthuc')");
+        //$img = "../../mobile/public/images/".$img;
+        $sql = self::$connection->prepare("INSERT INTO `job_hinhthuc`(`name_hinhthuc`, `img_hinhthuc`)
+        VALUES ('$name','$img')");
+        //$sql->bind_param($name,$img);
+        //$sql->bind_param(2,$img);
         return $sql->execute();
     }
-
     /**
      * Sửa Job hinhthuc
      */

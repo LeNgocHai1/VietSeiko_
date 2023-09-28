@@ -23,7 +23,7 @@ $hinhthuc = new Hinhthuc;
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Hình Thức Datatable</h4>
-                        <a href="new-candidate.php" class="btn btn-primary me-3 btn-sm"><i class="fas fa-plus me-2"></i>Add Ngành Nghề</a>
+                        <a href="new-loaicongviec.php" class="btn btn-primary me-3 btn-sm"><i class="fas fa-plus me-2"></i>Add Ngành Nghề</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -62,8 +62,8 @@ $hinhthuc = new Hinhthuc;
                                                 <td><?php echo $value['name_hinhthuc']; ?></td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="update-nganhnghe.php" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="delete_nganhnghe.php?id_nganhnghe=<?php echo $value['id_hinhthuc'] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        <a href="update-hinhthuc.php" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="delete_hinhthuc.php?id_hinhthuc=<?php echo $value['id_hinhthuc'] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>

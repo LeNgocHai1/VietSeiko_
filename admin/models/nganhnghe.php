@@ -1,4 +1,5 @@
 <?php
+require_once "db.php";
 class Nganhnghe extends Db
 {
     /**
@@ -11,6 +12,17 @@ class Nganhnghe extends Db
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array.
+    }
+    /**____________________________________________________________________________________________________
+     * LẤY Manufacturer THEO id:
+     */
+    static function getBrand($id_nganhnghe)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM job_nganhnghe  WHERE id_nganhnghe = ?");
+        $sql->bind_param("i", $id_nganhnghe);
+        $sql->execute();
+        $brand = $sql->get_result()->fetch_assoc();
+        return $brand['name_nganhnghe'];
     }
     //Lấy danh sách tất cả job nganhnghe và Phân trang:
     static function getAllNganhnghe_andCreatePagination($page, $resultsPerPage)
@@ -36,6 +48,18 @@ class Nganhnghe extends Db
         $type = $sql->get_result()->fetch_assoc();
         return $type['name_nganhnghe'];
     }
+    /**
+     * Lấy nganh nghe theo id
+     */
+    function getNganhngheByID($id)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `job_nganhnghe` where id_nganhnghe = ? ");
+        $sql->bind_param("i", $id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
 
     /**
      * Xóa nganhnghe theo id_nganhnghe
@@ -50,9 +74,13 @@ class Nganhnghe extends Db
     /**
      * Thêm Job nganhnghe
      */
-    static function insertJobNganhnghe($name_nganhnghe)
+    function addNganhNghe($name, $img)
     {
-        $sql = self::$connection->prepare("INSERT INTO job_nganhnghe(id_nganhnghe, name_nganhnghe) VALUE (0, 'name_nganhnghe')");
+        //$img = "../../mobile/public/images/".$img;
+        $sql = self::$connection->prepare("INSERT INTO `job_nganhnghe`(`name_nganhnghe`, `img_nganhnghe`)
+        VALUES ('$name','$img')");
+        //$sql->bind_param($name,$img);
+        //$sql->bind_param(2,$img);
         return $sql->execute();
     }
 
@@ -62,6 +90,18 @@ class Nganhnghe extends Db
     static function updateJobNganhnghe($id_nganhnghe, $name_nganhnghe)
     {
         $sql = self::$connection->prepare("UPDATE job_nganhnghe SET name_nganhnghe ='$name_nganhnghe' WHERE id_nganhnghe=$id_nganhnghe");
+        return $sql->execute();
+    }
+
+    function updateNganhnghe($id, $name, $img)
+    {
+        if ($img !== "") {
+            $sql = self::$connection->prepare("UPDATE `job_nganhnghe` SET `name_nganhnghe`=?, `img_nganhnghe`=? WHERE `id_nganhnghe` like $id");
+            $sql->bind_param("ss", $name, $img);
+        } else {
+            $sql = self::$connection->prepare("UPDATE `job_nganhnghe` SET `name_nganhnghe`=? WHERE `id_nganhnghe` like $id");
+            $sql->bind_param("s", $name);
+        }
         return $sql->execute();
     }
 

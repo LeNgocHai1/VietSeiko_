@@ -1,6 +1,9 @@
 <?php
 require_once "config.php";
 require_once "models/db.php";
+require_once "models/nganhnghe.php";
+
+$nganhngheAdmin = new Nganhnghe;
 ?>
 
 <!DOCTYPE html>

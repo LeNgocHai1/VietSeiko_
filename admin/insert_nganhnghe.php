@@ -1,13 +1,19 @@
+
 <?php
-require_once "config.php";
-require_once "models/db.php";
-require_once "models/nganhnghe.php";
+require "./models/nganhnghe.php";
+require "config.php";
+
 $nganhnghe = new Nganhnghe;
-?>
-<?php
-$insertResult = -1;
-if (isset($_GET['name_nganhnghe']) == TRUE) {
-    $insertResult = Nganhnghe::insertJobNganhnghe($_GET['name_nganhnghe']);
+
+
+if ($_FILES['fileUpload']['name'] == "") {
+    header("location: ./new-nganhnghe.php");
+    die;
 }
-header("Location: new-nganhnghe.php?functionType=protypes&insertResult=$insertResult");
+$nganhnghe->addNganhNghe($_POST['name_nganhnghe'], $_FILES['fileUpload']['name']);
+$target_dir = "/images/";
+$target_file = $target_dir . basename($_FILES['fileUpload']['name_nganhnghe']);
+move_uploaded_file($_FILES['fileUpload']['tmp_name'], $target_file);
+header("location: ./nganhnghe.php");
+
 ?>
