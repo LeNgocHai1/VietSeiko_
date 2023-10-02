@@ -162,7 +162,7 @@ li {
 }
 .job-block .inner-box {
   position: relative;
-  padding: 32px 20px 22px 30px;
+  padding: 10px 10px 5px 0px;
   background: #ffffff;
   border: 1px solid #ecedf2;
   box-sizing: border-box;
@@ -197,6 +197,9 @@ li {
   line-height: 26px;
   top: -3px;
   margin-bottom: 3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .job-block h4 a {
   color: #202124;
@@ -226,6 +229,7 @@ li {
   line-height: 22px;
   color: #696969;
 }
+
 .job-block .job-other-info {
   position: relative;
   display: flex;

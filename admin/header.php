@@ -2,8 +2,14 @@
 require_once "config.php";
 require_once "models/db.php";
 require_once "models/nganhnghe.php";
+require_once "models/job.php";
+require_once "models/hinhthuc.php";
+require_once "models/trangthai.php";
 
+$trangthaiAdmin = new Trangthai;
 $nganhngheAdmin = new Nganhnghe;
+$hinhthucAdmin = new Hinhthuc;
+$jobAdmin = new Job;
 ?>
 
 <!DOCTYPE html>
@@ -970,6 +976,7 @@ $nganhngheAdmin = new Nganhnghe;
                         <ul aria-expanded="false">
                             <li><a href="nganhnghe.php">Ngành Nghề</a></li>
                             <li><a href="hinh-thuc.php">Loại Công Việc</a></li>
+                            <li><a href="job-trangthai.php">Trang Thái</a></li>
                             <li><a href="blog.php">Blog</a></li>
                         </ul>
                     </li>

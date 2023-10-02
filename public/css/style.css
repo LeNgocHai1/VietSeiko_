@@ -434,6 +434,28 @@ ol li {
   content: "\f057";
 }
 
+.job-detail__information-detail--title {
+  border-left: 6px solid #00b14f;
+  color: #212f3f;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 28px;
+  margin: 0;
+  padding-left: 10px;
+}
+.job-block .job-icon-info span .icon {
+  background: #f4f5f5;
+  border-radius: 4px;
+  color: #212f3f;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 4px 8px;
+}
+
 /*---Padding (around)---*/
 .p-a0 {
   padding: 0px;

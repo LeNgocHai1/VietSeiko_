@@ -14,7 +14,7 @@ class Nganhnghe extends Db
         return $items; //return an array.
     }
     /**____________________________________________________________________________________________________
-     * LẤY Manufacturer THEO id:
+     * LẤY Ngành nghề THEO id:
      */
     static function getBrand($id_nganhnghe)
     {
@@ -24,6 +24,7 @@ class Nganhnghe extends Db
         $brand = $sql->get_result()->fetch_assoc();
         return $brand['name_nganhnghe'];
     }
+
     //Lấy danh sách tất cả job nganhnghe và Phân trang:
     static function getAllNganhnghe_andCreatePagination($page, $resultsPerPage)
     {
