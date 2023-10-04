@@ -1,9 +1,9 @@
 <?php
 require_once 'header.php';
 
-require_once 'models/nganhnghe.php';
+require_once 'models/trangthai.php';
 
-$nganhnghe = new Nganhnghe;
+$trangthai = new Trangthai;
 ?>
 
 <div class="content-body" style="min-height: 796px;">
@@ -11,7 +11,7 @@ $nganhnghe = new Nganhnghe;
 
         <div class="row page-titles">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="nganhnghe.php">Ngành Nghề</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Trạng thái</a></li>
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Datatable</a></li>
             </ol>
         </div>
@@ -22,8 +22,8 @@ $nganhnghe = new Nganhnghe;
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Ngành Nghề Datatable</h4>
-                        <a href="new-nganhnghe.php" class="btn btn-primary me-3 btn-sm"><i class="fas fa-plus me-2"></i>Add Ngành Nghề</a>
+                        <h4 class="card-title">Trạng Thái Datatable</h4>
+                        <a href="new-trangthai.php" class="btn btn-primary me-3 btn-sm"><i class="fas fa-plus me-2"></i>Add Trạng Thái</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -47,23 +47,23 @@ $nganhnghe = new Nganhnghe;
                                         <?php
                                         $page = 1;
                                         $resultsPerPage = 5;
-                                        $totalResults = count(Nganhnghe::getAllNganhnghe());
+                                        $totalResults = count(Trangthai::getAllTrangthai());
                                         if (isset($_GET['page']) == TRUE) {
                                             $page = $_GET['page'];
                                         }
-                                        $list_of_Nganhnghe = Nganhnghe::getAllNganhnghe_andCreatePagination($page, $resultsPerPage);
+                                        $list_of_trangthai = Trangthai::getAllTrangthai_andCreatePagination($page, $resultsPerPage);
 
                                         //Output:
                                         echo "<p style=\"text-align:center;\"><b>There are $totalResults results.</b></p>";
-                                        foreach ($list_of_Nganhnghe as $key => $value) {
+                                        foreach ($list_of_trangthai as $key => $value) {
                                         ?>
                                             <tr role="row" class="odd">
                                                 <td class="sorting_1"><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
-                                                <td><?php echo $value['name_nganhnghe']; ?></td>
+                                                <td><?php echo $value['name_trangthai']; ?></td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="edit-nganhnghe.php" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="delete_nganhnghe.php?id_nganhnghe=<?php echo $value['id_nganhnghe'] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        <a href="update-hinhthuc.php" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="delete_hinhthuc.php?id_trangthai=<?php echo $value['id_trangthai'] ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -77,7 +77,7 @@ $nganhnghe = new Nganhnghe;
                                         starting on record 1, ending on 2</span>
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination my-2 my-md-0">
-                                            <?php echo Nganhnghe::paginate("users-candidate.php?", $page, $totalResults, $resultsPerPage, 1) ?>
+                                            <?php echo Hinhthuc::paginate("users-candidate.php?", $page, $totalResults, $resultsPerPage, 1) ?>
                                         </ul>
                                     </nav>
                                 </div>

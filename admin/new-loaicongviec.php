@@ -1,10 +1,9 @@
 <?php
-require_once 'models/db.php';
 require_once 'header.php';
 
-require_once "models/nganhnghe.php";
+require_once "models/hinhthuc.php";
 
-$nganhnghe = new Nganhnghe;
+$hinhthuc = new Hinhthuc;
 ?>
 
 <div class="content-body" style="min-height: 796px;">
@@ -20,16 +19,16 @@ $nganhnghe = new Nganhnghe;
             <div class="col col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">New Ngành Nghề</h4>
+                        <h4 class="card-title">New Loại Công Việc</h4>
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
                             <!-- BEGIN NGANH NGHE FORM -->
-                            <form action="insert_nganhnghe.php" method="post" class="form-horizontal" enctype="multipart/form-data">
+                            <form action="insert_loaicongviec.php" method="post" class="form-horizontal" enctype="multipart/form-data">
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <label class="sr-only">Name</label>
-                                        <input type="text" class="form-control mb-2" placeholder="Ngành Nghề" name="name_nganhnghe">
+                                        <input type="text" class="form-control mb-2" placeholder="Ngành Nghề" name="name_hinhthuc" required>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Choose an image :</label>

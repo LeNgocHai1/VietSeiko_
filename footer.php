@@ -114,7 +114,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-info">
                 <div class="footer-copy-right">
-                    <span class="copyrights-text">Copyright © 2023 by thewebmax All Rights Reserved.</span>
+                    <span class="copyrights-text">Copyright © 2023 by LeNgocHai All Rights Reserved.</span>
                 </div>
                 <ul class="social-icons">
                     <li>

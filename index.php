@@ -2,6 +2,10 @@
 require_once 'header.php';
 
 require_once 'config.php';
+require_once "models/db.php";
+require_once "models/job.php";
+
+$job = new Job;
 ?>
 
 <!-- CONTENT START -->
@@ -304,238 +308,42 @@ require_once 'config.php';
           <div class="tab active-tab animated fadeIn" id="tab1" style="display: block">
             <div class="row">
               <!-- Job Block -->
-              <div class="job-block col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-box">
-                  <div class="content">
-                    <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
-                    <h4>
-                      <a href="#">Software Engineer (Android), Libraries</a>
-                    </h4>
-                    <ul class="job-info">
-                      <li>
-                        <span class="icon bi bi-briefcase"></span>
-                        Segment
-                      </li>
-                      <li>
-                        <span class="icon bi bi-geo-al"></span>
-                        London, UK
-                      </li>
-                      <li>
-                        <span class="icon bi bi-clock"></span> 11 hours
-                        ago
-                      </li>
-                      <li>
-                        <span class="icon bi bi-cash-coin"></span> $35k -
-                        $45k
-                      </li>
-                    </ul>
-                    <ul class="job-other-info">
-                      <li class="time">Full Time</li>
-                      <li class="privacy">Private</li>
-                      <li class="required">Urgent</li>
-                    </ul>
-                    <!-- 
+              <?php
+              $list_of_latestJob = Job::getLatestJob(6);
+              foreach ($list_of_latestJob as $key => $value) {
+              ?>
+                <div class="job-block col-lg-4 col-md-12 col-sm-12">
+                  <div class="inner-box " style="padding: 10px 10px 5px 0px;">
+                    <div class="content">
+                      <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
+                      <h5 style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                        <a href="job-detail.php?id=<?php echo $value['chucvu'] ?>"><?php echo $value['chucvu'] ?></a>
+                      </h5>
+                      <ul class="job-info" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        <a href=""><?php echo $value['tencongty'] ?></a>
+                      </ul>
+                      <ul class="job-icon-info">
+                        <span class="icon" style="background: #f4f5f5; border-radius: 4px;color: #212f3f;display: inline-block;
+                          font-size: 12px;font-weight: 500;line-height: 16px;padding: 4px 8px;">
+                          <?php echo $value['capbac'] ?>
+                        </span>
+                        <span class="icon" style="background: #f4f5f5; border-radius: 4px;color: #212f3f;display: inline-block;
+                          font-size: 12px;font-weight: 500;line-height: 16px;padding: 4px 8px;">
+                          <?php echo $value['diachi'] ?>
+                        </span>
+                        <span class="icon" style="background: #f4f5f5; border-radius: 4px;color: #212f3f;display: inline-block;
+                          font-size: 12px;font-weight: 500;line-height: 16px;padding: 4px 8px;">
+                          <?php echo $value['mucluong'] ?>
+                        </span>
+                      </ul>
+                      <!-- 
                           <button class="bookmark-btn">
                             <span class="flaticon-bookmark"></span>
                           </button> -->
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <!-- Job Block -->
-              <div class="job-block col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-box">
-                  <div class="content">
-                    <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
-                    <h4>
-                      <a href="#">Software Engineer (Android), Libraries</a>
-                    </h4>
-                    <ul class="job-info">
-                      <li>
-                        <span class="icon bi bi-briefcase"></span>
-                        Segment
-                      </li>
-                      <li>
-                        <span class="icon bi bi-geo-al"></span>
-                        London, UK
-                      </li>
-                      <li>
-                        <span class="icon bi bi-clock"></span> 11 hours
-                        ago
-                      </li>
-                      <li>
-                        <span class="icon bi bi-cash-coin"></span> $35k -
-                        $45k
-                      </li>
-                    </ul>
-                    <ul class="job-other-info">
-                      <li class="time">Full Time</li>
-                      <li class="privacy">Private</li>
-                      <li class="required">Urgent</li>
-                    </ul>
-                    <!-- 
-                          <button class="bookmark-btn">
-                            <span class="flaticon-bookmark"></span>
-                          </button> -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- Job Block -->
-              <div class="job-block col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-box">
-                  <div class="content">
-                    <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
-                    <h4>
-                      <a href="#">Software Engineer (Android), Libraries</a>
-                    </h4>
-                    <ul class="job-info">
-                      <li>
-                        <span class="icon bi bi-briefcase"></span>
-                        Segment
-                      </li>
-                      <li>
-                        <span class="icon bi bi-geo-al"></span>
-                        London, UK
-                      </li>
-                      <li>
-                        <span class="icon bi bi-clock"></span> 11 hours
-                        ago
-                      </li>
-                      <li>
-                        <span class="icon bi bi-cash-coin"></span> $35k -
-                        $45k
-                      </li>
-                    </ul>
-                    <ul class="job-other-info">
-                      <li class="time">Full Time</li>
-                      <li class="privacy">Private</li>
-                      <li class="required">Urgent</li>
-                    </ul>
-                    <!-- 
-                          <button class="bookmark-btn">
-                            <span class="flaticon-bookmark"></span>
-                          </button> -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- Job Block -->
-              <div class="job-block col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-box">
-                  <div class="content">
-                    <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
-                    <h4>
-                      <a href="#">Software Engineer (Android), Libraries</a>
-                    </h4>
-                    <ul class="job-info">
-                      <li>
-                        <span class="icon bi bi-briefcase"></span>
-                        Segment
-                      </li>
-                      <li>
-                        <span class="icon bi bi-geo-al"></span>
-                        London, UK
-                      </li>
-                      <li>
-                        <span class="icon bi bi-clock"></span> 11 hours
-                        ago
-                      </li>
-                      <li>
-                        <span class="icon bi bi-cash-coin"></span> $35k -
-                        $45k
-                      </li>
-                    </ul>
-                    <ul class="job-other-info">
-                      <li class="time">Full Time</li>
-                      <li class="privacy">Private</li>
-                      <li class="required">Urgent</li>
-                    </ul>
-                    <!-- 
-                          <button class="bookmark-btn">
-                            <span class="flaticon-bookmark"></span>
-                          </button> -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- Job Block -->
-              <div class="job-block col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-box">
-                  <div class="content">
-                    <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
-                    <h4>
-                      <a href="#">Software Engineer (Android), Libraries</a>
-                    </h4>
-                    <ul class="job-info">
-                      <li>
-                        <span class="icon bi bi-briefcase"></span>
-                        Segment
-                      </li>
-                      <li>
-                        <span class="icon bi bi-geo-al"></span>
-                        London, UK
-                      </li>
-                      <li>
-                        <span class="icon bi bi-clock"></span> 11 hours
-                        ago
-                      </li>
-                      <li>
-                        <span class="icon bi bi-cash-coin"></span> $35k -
-                        $45k
-                      </li>
-                    </ul>
-                    <ul class="job-other-info">
-                      <li class="time">Full Time</li>
-                      <li class="privacy">Private</li>
-                      <li class="required">Urgent</li>
-                    </ul>
-                    <!-- 
-                          <button class="bookmark-btn">
-                            <span class="flaticon-bookmark"></span>
-                          </button> -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- Job Block -->
-              <div class="job-block col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-box">
-                  <div class="content">
-                    <span class="company-logo"><img src="images/jobs-company/pic1.jpg" alt="" /></span>
-                    <h4>
-                      <a href="#">Software Engineer (Android), Libraries</a>
-                    </h4>
-                    <ul class="job-info">
-                      <li>
-                        <span class="icon bi bi-briefcase"></span>
-                        Segment
-                      </li>
-                      <li>
-                        <span class="icon bi bi-geo-al"></span>
-                        London, UK
-                      </li>
-                      <li>
-                        <span class="icon bi bi-clock"></span> 11 hours
-                        ago
-                      </li>
-                      <li>
-                        <span class="icon bi bi-cash-coin"></span> $35k -
-                        $45k
-                      </li>
-                    </ul>
-                    <ul class="job-other-info">
-                      <li class="time">Full Time</li>
-                      <li class="privacy">Private</li>
-                      <li class="required">Urgent</li>
-                    </ul>
-                    <!-- 
-                          <button class="bookmark-btn">
-                            <span class="flaticon-bookmark"></span>
-                          </button> -->
-                  </div>
-                </div>
-              </div>
+              <?php } ?>
             </div>
           </div>
 

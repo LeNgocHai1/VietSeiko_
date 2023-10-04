@@ -1,10 +1,10 @@
 <?php
-require_once 'models/db.php';
 require_once 'header.php';
+require_once 'models/db.php';
 
-require_once "models/nganhnghe.php";
+require_once "models/trangthai.php";
 
-$nganhnghe = new Nganhnghe;
+$trangthai = new Trangthai;
 ?>
 
 <div class="content-body" style="min-height: 796px;">
@@ -12,7 +12,7 @@ $nganhnghe = new Nganhnghe;
         <div class="row page-titles">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Form</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">New Ngành Nghề</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">New Trạng Thái</a></li>
             </ol>
         </div>
         <!-- row -->
@@ -20,16 +20,16 @@ $nganhnghe = new Nganhnghe;
             <div class="col col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">New Ngành Nghề</h4>
+                        <h4 class="card-title">New Trạng Thái</h4>
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
                             <!-- BEGIN NGANH NGHE FORM -->
-                            <form action="insert_nganhnghe.php" method="post" class="form-horizontal" enctype="multipart/form-data">
+                            <form action="insert_trangthai.php" method="post" class="form-horizontal" enctype="multipart/form-data">
                                 <div class="row align-items-center">
                                     <div class="col">
                                         <label class="sr-only">Name</label>
-                                        <input type="text" class="form-control mb-2" placeholder="Ngành Nghề" name="name_nganhnghe">
+                                        <input type="text" class="form-control mb-2" placeholder="Trạng Thái" name="name_trangthai" required>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Choose an image :</label>
