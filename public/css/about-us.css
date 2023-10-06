@@ -698,3 +698,20 @@ img {
     border-radius: 5px;
     margin: 0 5px;
 }
+
+/* --css nộp hồ sơ */
+.btn-primary {
+    background-color: rgb(17 142 233);
+    width: 128px;
+    height: 43px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+}

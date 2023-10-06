@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="" />
+
+    <!-- FAVICONS ICON -->
+    <link rel="icon" href="public/images/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="public/images/favicon.png" />
+    <!-- Bao gồm các tệp CSS và JavaScript của Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- PAGE TITLE HERE -->
+    <title>Jobzilla Template | Home Page Style 1</title>
+
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<style>
+    .form-control {
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+
+    }
+
+
+    .form-control {
+        border-radius: 10px;
+        border: 2px solid #ccc;
+    }
+
+    .form-label,
+    .form-control {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .container {
+        padding: 20px;
+
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+
+    .card-footer {
+        padding: 10px;
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+
+    }
+
+    .with-scroll {
+        max-height: 170px;
+        overflow-y: auto;
+
+
+    }
+
+    .mp-3 label {
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+
+    .form-group p {
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+
+    .btn-custom {
+        background-color: white;
+        width: 219px;
+        height: 35px;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .btn-custom:hover {
+        background-color: #f0f0f0;
+
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card p {
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+
+    .card.fw-bold {
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+
+    .img {
+        text-align: center;
+    }
+
+    .bordered-col-sm-6,
+    .offset-sm-3 {
+        border-radius: 10px;
+        border: 1px solid #000;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3 bordered-element">
+                <div class="card">
+                    <p class="fw-bold">Ứng tuyển vị trí</p>
+                    <h4>Nhân Viên Tư Vấn</h4>
+                    <p>Công Ty TNHH Bảo Hiểm Nhân Thọ AIA (Việt Nam)</p>
+                </div>
+                <div class="card-body with-scroll">
+                    <div class="group img">
+                        <img src="images/apply-job.png" alt="" width="128px" height="128px">
+                    </div>
+                    <form>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <a href="#" class="btn btn-custom">Tạo hồ sơ trực tiếp</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <input type="file" class="btn btn-custom" id="resume"
+                                    placeholder="Tải lên hồ sơ có sẵn">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Họ Và Tên *</label>
+                            <input type="text" class="form-control rounded" id="fullName"
+                                placeholder="Nhập họ và tên của bạn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" class="form-control rounded" id="email"
+                                placeholder="Nhập địa chỉ email của bạn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Số Điện Thoại *</label>
+                            <input type="tel" class="form-control rounded" id="phoneNumber"
+                                placeholder="Nhập số điện thoại của bạn">
+                        </div>
+                    </form>
+                </div>
+                <hr>
+                <div class="card-footer mt-3 d-flex justify-content-between align-items-center">
+                    <p>Nhận thông báo việc làm tương</p>
+                    <button class="btn btn-primary" ng-click="calculate()">Nộp Hồ Sơ</button>
+                </div>
+                <div class="form-group text-center">
+                    <p>Bằng việc nhấn nút nộp hồ sơ, bạn đã đồng ý với Điều khoản sử dụng và Chính sách bảo mật của
+                        Việc Làm 24h</p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+</div>
+
+<!-- Thêm link JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
